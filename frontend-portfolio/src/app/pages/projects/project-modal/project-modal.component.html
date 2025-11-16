@@ -1,0 +1,83 @@
+<div class="modal-backdrop" (click)="close.emit()">
+   <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-button" (click)="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+          <div class="project-badge">{{project?.badge}}</div>
+          <h2 class="modal-title">{{project?.title}}</h2>
+          <p class="modal-subtitle">{{project?.subtitle}}</p>
+        </div>
+
+        <div class="modal-body">
+          <div class="project-image-large">
+            <img [src]="project?.image" [alt]="project?.title" />
+          </div>
+
+          <div class="project-details">
+            <div class="detail-section">
+              <h3>📖 Project Overview</h3>
+              <p class="full-description">{{project?.fullDescription}}</p>
+            </div>
+
+            <div class="detail-section" *ngIf="project?.architecture">
+              <h3>🏗️ Architecture</h3>
+              <pre class="architecture">{{project?.architecture}}</pre>
+            </div>
+
+            <div class="detail-section" *ngIf="project?.challenges && project?.solutions">
+              <h3>💡 Challenges & Solutions</h3>
+              <div class="challenges-solutions">
+                <div class="challenges">
+                  <h4>Challenges</h4>
+                  <ul>
+                    <li *ngFor="let challenge of project?.challenges">{{challenge}}</li>
+                  </ul>
+                </div>
+                <div class="solutions">
+                  <h4>Solutions</h4>
+                  <ul>
+                    <li *ngFor="let solution of project?.solutions">{{solution}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="detail-section">
+              <h3>✨ Features</h3>
+              <div class="features-grid">
+                <div *ngFor="let feature of project?.features" class="feature-item">
+                  <i class="fas fa-check"></i>
+                  {{feature}}
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>🛠️ Technologies</h3>
+              <div class="tech-stack">
+                <span *ngFor="let tech of project?.technologies" class="tech-tag-large">
+                  {{tech}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="project-links">
+            <a [href]="project?.liveUrl" class="btn btn-primary" target="_blank" rel="noopener">
+              <i class="fas fa-rocket"></i>
+              Live Demo
+            </a>
+            <a *ngIf="project?.githubUrl" [href]="project?.githubUrl" class="btn btn-secondary" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

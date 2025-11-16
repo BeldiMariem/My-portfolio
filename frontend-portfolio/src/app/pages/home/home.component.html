@@ -47,10 +47,30 @@
 
 <section id="projects" class="section">
   <div class="container">
-    <h2>Projects</h2>
+    <div class="projects-section">
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">Here are some of the projects I've built with modern technologies</p>
+      <p class="github-note">
+        <i class="fab fa-github"></i>
+        For complete technical details, setup instructions, and source code, check the GitHub README files of each
+        project.
+      </p>
+      <div class="projects-grid">
+        <app-projects *ngFor="let project of projects" [project]="project" (click)="openProject(project)">
+        </app-projects>
+      </div>
+    </div>
+
+    <div *ngIf="selectedProject"
+      style="position: fixed; top: 0; left: 0; background: red; color: white; padding: 10px; z-index: 9999;">
+      Modal should be open! Selected: {{selectedProject.title}}
+    </div>
+
+
   </div>
 </section>
-
+<app-project-modal *ngIf="selectedProject" [project]="selectedProject" (close)="closeModal()">
+</app-project-modal>
 <section id="experience" class="section">
   <div class="container">
     <h2>Experience</h2>
