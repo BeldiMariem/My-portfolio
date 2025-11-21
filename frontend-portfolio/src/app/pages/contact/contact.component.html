@@ -1,0 +1,107 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contact me</h2>
+    <p class="section-subtitle">
+      I'm always open to discussing new opportunities, projects, or just having a chat about technology
+    </p>
+
+    <div class="contact-content">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Let's Connect</h3>
+        <p class="contact-description">
+          Whether you have a project in mind, want to collaborate, or just say hello, 
+          I'd love to hear from you. Feel free to reach out through any of these channels.
+        </p>
+
+        <div class="contact-methods">
+          <div 
+            class="contact-method" 
+            *ngFor="let contact of contactInfo"
+            (click)="navigateTo(contact.link)"
+          >
+            <div class="contact-icon">
+              <i [class]="contact.icon"></i>
+            </div>
+            <div class="contact-details">
+              <h4>{{ contact.type }}</h4>
+              <p>{{ contact.value }}</p>
+            </div>
+            <div class="contact-arrow">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="availability">
+          <div class="availability-badge">
+            <i class="fas fa-circle"></i>
+            Available for new opportunities
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Send Me a Message</h3>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              [(ngModel)]="formData.name"
+              required
+              placeholder="Enter your name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              [(ngModel)]="formData.email"
+              required
+              placeholder="Enter your email"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject"
+              [(ngModel)]="formData.subject"
+              required
+              placeholder="What's this about?"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea 
+              id="message" 
+              name="message"
+              [(ngModel)]="formData.message"
+              required
+              rows="5"
+              placeholder="Tell me about your project or just say hello..."
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="btn btn-primary submit-btn"
+          >
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

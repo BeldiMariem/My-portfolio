@@ -35,7 +35,7 @@ export const PROJECTS_DATA: Project[] = [
 • Security: JWT authentication with Spring Security tests`,
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
     liveUrl: "http://todo-app-alb-911217416.us-east-1.elb.amazonaws.com",
-    githubUrl: "https://github.com/BeldiMariem",
+    githubUrl: "https://github.com/BeldiMariem/ToDo-List-App",
     badge: "Full Stack",
     category: "web",
     architecture: `
@@ -74,13 +74,13 @@ export const PROJECTS_DATA: Project[] = [
       "Unit Testing Coverage",
       "Docker Containerization"
     ],
-    technologies: ["Angular20+", "Spring Boot with Java21", "PostgreSQL", "AWS", "Docker", "Docker Compose", "Docker Hub", "JUnit", "Jasmine", "WebSocket", "Jenkins", "OAuth2"]
+    technologies: ["Angular20+", "Spring Boot", "Java21","AWS", "PostgreSQL", "Docker", "Docker Compose", "Docker Hub", "JUnit", "Jasmine", "WebSocket", "Jenkins", "OAuth2"]
   },
   {
     id: 2,
     title: "🔗 URL Shortener",
     subtitle: "React & Node.js • Render Deployment", 
-    description: "A complete URL Shortener application with React frontend, Node.js/Express backend, and MongoDB Atlas, featuring clean architecture and comprehensive testing.",
+    description: "A complete URL Shortener application with React, Node.js/Express, and MongoDB Atlas, featuring clean architecture.",
     fullDescription: `Shorty is a full-stack URL shortening service built with React and Node.js, following clean architecture principles. The application includes user authentication, admin dashboard, URL analytics, and integration with Google Custom Search API.
 
 • Backend: Node.js/Express with Jest unit tests, Supertest for API testing
@@ -90,7 +90,7 @@ export const PROJECTS_DATA: Project[] = [
 • E2E Testing: Cypress for complete user journey testing`,
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
     liveUrl: "https://shortyapp.onrender.com",
-    githubUrl: "https://github.com/BeldiMariem",
+    githubUrl: "https://github.com/BeldiMariem/UrlShortener",
     badge: "Full Stack",
     category: "web",
     architecture: `
@@ -141,7 +141,58 @@ export const PROJECTS_DATA: Project[] = [
 • E2E Testing: Playwright for complete chat functionality testing`,
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop", 
     liveUrl: "https://chat-app-real-time.fly.dev",
-    githubUrl: "https://github.com/BeldiMariem",
+    githubUrl: "https://github.com/BeldiMariem/chat-app",
+    badge: "Real-time",
+    category: "web",
+    architecture: `
+      - Frontend: Vue.js 3 with Composition API, Vitest unit tests
+      - Backend: Go 1.24 with gRPC-Web protocol, native Go tests
+      - Database: Firebase Firestore for real-time data
+      - Authentication: Firebase Authentication
+      - Testing: Go testing package, Vitest frontend tests
+      - Containerization: Docker Compose, Docker Hub images
+      - Communication: gRPC-Web for efficient RPC
+      - E2E Testing: Playwright for user workflows
+    `,
+    challenges: [
+      "Learning Go testing patterns and best practices",
+      "Setting up Docker environment for Go and Vue.js",
+      "Writing tests for real-time gRPC-Web functionality",
+      "Managing frontend state testing with Vue 3 Composition API"
+    ],
+    solutions: [
+      "Studied Go testing patterns with table-driven tests and mocks",
+      "Used Docker Compose to manage Go backend and Vue frontend services",
+      "Created comprehensive test suites for gRPC handlers and services",
+      "Implemented Vue composables with testable reactive state"
+    ],
+    features: [
+      "Real-time Messaging",
+      "Multiple Rooms", 
+      "Firebase Auth",
+      "gRPC-Web",
+      "Unit Testing",
+      "Docker Deployment",
+      "Clean Architecture",
+      "Responsive Design"
+    ],
+    technologies: ["Vue3", "Go1.24+", "Firebase", "gRPC", "Docker", "Docker Compose", "Docker Hub", "Vitest", "Go Testing", "Playwright", "Protocol Buffers"]
+  },
+  {
+    id: 4,
+    title: "💬 Real-Time Chat",
+    subtitle: "Vue & Go • Fly.io Deployment",
+    description: "A real-time chat application built with Go backend, Vue.js frontend, and Firebase Firestore. Features clean architecture and gRPC-Web communication.",
+    fullDescription: `A real-time chat application exploring modern backend development with Go. Features multiple chat rooms, user authentication with Firebase, and real-time messaging using gRPC-Web for efficient client-server communication.
+
+• Backend: Go 1.24 with native testing package, testify for assertions
+• Frontend: Vue.js 3 with Vitest unit tests, Vue Test Utils
+• DevOps: Docker Compose for development, Docker Hub for production images
+• Real-time: gRPC-Web with protocol buffers, WebSocket fallback
+• E2E Testing: Playwright for complete chat functionality testing`,
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop", 
+    liveUrl: "https://chat-app-real-time.fly.dev",
+    githubUrl: "https://github.com/BeldiMariem/chat-app",
     badge: "Real-time",
     category: "web",
     architecture: `

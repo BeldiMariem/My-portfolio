@@ -322,7 +322,7 @@ html, body {
 
 
 .section {
-  padding: 50px 0;
+  padding: 30px 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -731,5 +731,140 @@ html, body {
   .project-card:hover .project-buttons {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.education-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.container-education {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #6c63ff;
+  }
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.education-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(135deg, #6c63ff, #8a84ff);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(108, 99, 255, 0.15);
+  }
+}
+
+.education-content {
+  .degree {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+  }
+  
+  .institution {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6c63ff;
+    margin: 0 0 15px 0;
+  }
+}
+
+.education-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  .period, .location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.95rem;
+    
+    i {
+      color: #6c63ff;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-item {
+    padding: 25px;
+  }
+  
+  .education-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-item {
+    padding: 20px;
+  }
+  
+  .degree {
+    font-size: 1.2rem;
+  }
+  
+  .institution {
+    font-size: 1rem;
   }
 }
