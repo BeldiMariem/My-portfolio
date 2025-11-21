@@ -13,7 +13,7 @@
         </p>
         <div class="hero-buttons">
           <a href="#" class="btn btn-primary">Download CV</a>
-          <a href="#" class="btn btn-secondary">My projects</a>
+          <a href="#projects" class="btn btn-secondary">My projects</a>
         </div>
         <div class="social-icons">
           <a href="https://github.com/BeldiMariem" class="social-icon">
@@ -47,36 +47,79 @@
 
 <section id="projects" class="section">
   <div class="container">
-    <h2>Projects</h2>
+    <div class="projects-section">
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">Here are some of the projects I've built with modern technologies</p>
+      <p class="github-note">
+        <i class="fab fa-github"></i>
+        For complete technical details, setup instructions, and source code, check the GitHub README files of each
+        project.
+      </p>
+      <div class="projects-grid">
+        <app-projects *ngFor="let project of projects" [project]="project" (click)="openProject(project)">
+        </app-projects>
+      </div>
+    </div>
+
+    <div *ngIf="selectedProject"
+      style="position: fixed; top: 0; left: 0; background: red; color: white; padding: 10px; z-index: 9999;">
+      Modal should be open! Selected: {{selectedProject.title}}
+    </div>
+
+
   </div>
 </section>
+<app-project-modal *ngIf="selectedProject" [project]="selectedProject" (close)="closeModal()">
+</app-project-modal>
+
+
 
 <section id="experience" class="section">
   <div class="container">
-    <h2>Experience</h2>
+    <app-experience></app-experience>
   </div>
 </section>
 
+
 <section id="education" class="section">
-  <div class="container">
-    <h2>Education</h2>
+  <div class="container-education">
+    <h2 class="section-title"> Educations</h2>
+    
+    <div class="education-list">
+      <div class="education-item" *ngFor="let edu of education">
+        <div class="education-content">
+          <h3 class="degree">{{ edu.degree }}</h3>
+          <p class="institution">{{ edu.institution }}</p>
+          <div class="education-meta">
+            <span class="period">
+              <i class="fas fa-calendar"></i>
+              {{ edu.period }}
+            </span>
+            <span class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              {{ edu.location }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="skills" class="section">
   <div class="container">
-    <h2>Skills</h2>
+    <app-skills></app-skills>
   </div>
 </section>
 
 <section id="more" class="section">
   <div class="container">
-    <h2>More About Me</h2>
+    <app-more-about></app-more-about>
   </div>
 </section>
 
 <section id="contact" class="section">
   <div class="container">
-    <h2>Contact Me</h2>
+    <app-contact></app-contact>
   </div>
 </section>

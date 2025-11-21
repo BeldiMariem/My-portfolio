@@ -1,0 +1,33 @@
+<section class="more-about-section">
+  <div class="container">
+    <h2 class="section-title">More About Me</h2>
+    
+    <div class="creative-side">
+      <div class="creative-text">
+        <h3>Beyond the Code: My Creative Side</h3>
+        <p>
+          While I'm passionate about building digital solutions, I also find creative expression through pencil drawing. 
+          There's something meditative about putting pencil to paper and bringing ideas to life through shades and textures.
+        </p>
+        <p>
+          My journey with art has taught me patience, attention to detail, and the importance of seeing the bigger picture - 
+          skills that directly translate to writing better code and creating more thoughtful user experiences.
+        </p>
+        <p class="creative-philosophy">
+          "To me, both coding and drawing are about creating something meaningful from nothing - 
+          whether it's with pixels or pencil strokes."
+        </p>
+      </div>
+      
+      <div class="artwork-showcase">
+        <h4>My Pencil Drawings</h4>
+        <div class="drawings-grid">
+          <div class="drawing-item" *ngFor="let drawing of drawings">
+            <img [src]="drawing.image" [alt]="drawing.title" />
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
